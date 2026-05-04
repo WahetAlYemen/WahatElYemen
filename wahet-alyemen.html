@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>واحة اليمن | Wahet AlYemen - ملوك المندي الذهبي في مصر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C4922A;
+    --gold-light: #E8B84B;
+    --gold-pale: #F5D98A;
+    --brown-deep: #1A0A02;
+    --brown-dark: #2C1505;
+    --brown-mid: #5C2E0A;
+    --brown-warm: #8B4513;
+    --cream: #FAF0DC;
+    --cream-dark: #F0DEB8;
+    --cream-deeper: #E8CFA0;
+    --sand: #D4B896;
+    --text-dark: #1A0A02;
+    --text-body: #3D1C02;
+    --text-muted: #7A5C3A;
+    --white: #FFFDF7;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    background: var(--brown-deep);
+    color: var(--cream);
+    overflow-x: hidden;
+    direction: rtl;
+  }
+
+  /* ─── GEOMETRIC PATTERN SVG ─── */
+  .geo-pattern {
+    position: absolute;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0 3rem;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+    background: transparent;
+  }
+
+  nav.scrolled {
+    background: rgba(26, 10, 2, 0.96);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(196, 146, 42, 0.2);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.4);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    object-fit: cover;
+    background: var(--brown-mid);
+  }
+
+  .nav-logo-text {
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .nav-logo-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    color: var(--gold-pale);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 0.85rem;
+    color: var(--cream-dark);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+    font-weight: 400;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--brown-deep) !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    font-weight: 700 !important;
+    font-size: 0.8rem !important;
+    transition: all 0.3s ease !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(196, 146, 42, 0.4) !important;
+  }
+
+  .nav-cta::after { display: none !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--brown-deep);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 120%, rgba(196,146,42,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(92,46,10,0.4) 0%, transparent 50%),
+      linear-gradient(180deg, #0D0401 0%, #1A0A02 30%, #2C1505 70%, #1A0A02 100%);
+  }
+
+  /* Animated desert stars */
+  .stars {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--gold-pale);
+    animation: twinkle var(--d, 3s) var(--delay, 0s) infinite ease-in-out;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.3); }
+  }
+
+  /* Islamic geometric ornament */
+  .ornament-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(196, 146, 42, 0.15);
+    animation: rotateRing var(--speed, 30s) linear infinite var(--dir, normal);
+  }
+
+  @keyframes rotateRing { to { transform: rotate(360deg); } }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 900px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(196, 146, 42, 0.4);
+    padding: 0.4rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold-pale);
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    background: rgba(196, 146, 42, 0.06);
+    animation: fadeInDown 1s ease both;
+  }
+
+  .hero-badge::before, .hero-badge::after {
+    content: '◆';
+    font-size: 0.4rem;
+    color: var(--gold);
+  }
+
+  .hero-logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    display: block;
+    filter: drop-shadow(0 0 40px rgba(196,146,42,0.3));
+    animation: fadeInScale 1.2s ease both 0.2s;
+    border: 3px solid rgba(196, 146, 42, 0.3);
+    object-fit: cover;
+    background: var(--brown-mid);
+  }
+
+  @keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .hero-title-ar {
+    font-family: 'Amiri', serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    line-height: 1.1;
+    color: var(--gold-light);
+    text-shadow: 0 0 60px rgba(196, 146, 42, 0.4), 0 4px 20px rgba(0,0,0,0.5);
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 1s ease both 0.4s;
+    font-weight: 700;
+  }
+
+  .hero-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    letter-spacing: 0.4em;
+    color: var(--gold-pale);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease both 0.6s;
+    font-weight: 300;
+  }
+
+  .hero-tagline {
+    font-family: 'Amiri', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--cream-dark);
+    opacity: 0.9;
+    margin-bottom: 0.8rem;
+    animation: fadeInUp 1s ease both 0.7s;
+    font-style: italic;
+  }
+
+  .hero-crown {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease both 0.65s;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    color: var(--cream-deeper);
+    opacity: 0.75;
+    max-width: 540px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease both 0.8s;
+    font-weight: 300;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease both 1s;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    background-size: 200% 100%;
+    color: var(--brown-deep);
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.4s ease;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-primary:hover {
+    background-position: 100% 0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(196, 146, 42, 0.5);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--gold-pale);
+    padding: 0.9rem 2.5rem;
+    border: 1px solid rgba(196, 146, 42, 0.5);
+    border-radius: 2px;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(10px);
+  }
+
+  .btn-outline:hover {
+    background: rgba(196, 146, 42, 0.1);
+    border-color: var(--gold);
+    color: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeInUp 1s ease both 1.4s;
+    cursor: pointer;
+  }
+
+  .hero-scroll span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    opacity: 0.6;
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+    animation: scrollPulse 2s ease-in-out infinite;
+    transform-origin: top;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.7); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0 auto 4rem;
+    max-width: 500px;
+    padding: 0 2rem;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .divider-diamond {
+    width: 10px;
+    height: 10px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  /* ─── SECTION STYLES ─── */
+  section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .section-title {
+    font-family: 'Amiri', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--gold-light);
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .section-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--cream-dark);
+    text-align: center;
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  /* ─── ABOUT / STORY ─── */
+  .about {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, var(--brown-deep) 0%, #210d04 50%, var(--brown-deep) 100%);
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-frame {
+    position: relative;
+    border: 2px solid rgba(196,146,42,0.25);
+    padding: 2rem;
+    border-radius: 4px;
+  }
+
+  .about-frame::before {
+    content: '';
+    position: absolute;
+    top: -10px; right: -10px;
+    bottom: 10px; left: 10px;
+    border: 1px solid rgba(196,146,42,0.15);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .about-img-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--brown-mid) 0%, var(--brown-dark) 100%);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tent-icon {
+    font-size: 4rem;
+    opacity: 0.5;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 1px;
+    background: rgba(196,146,42,0.15);
+  }
+
+  .stat-box {
+    background: rgba(26,10,2,0.8);
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--sand);
+    margin-top: 4px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .about-text h2 {
+    font-family: 'Amiri', serif;
+    font-size: 2.2rem;
+    color: var(--gold-light);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .about-text h2 em {
+    font-style: italic;
+    color: var(--gold-pale);
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    color: var(--cream-dark);
+    line-height: 2;
+    opacity: 0.85;
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(196,146,42,0.15);
+    border-radius: 2px;
+    background: rgba(196,146,42,0.04);
+    transition: all 0.3s;
+  }
+
+  .feature-item:hover {
+    border-color: rgba(196,146,42,0.4);
+    background: rgba(196,146,42,0.08);
+  }
+
+  .feature-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .feature-item span {
+    font-size: 0.8rem;
+    color: var(--cream-dark);
+    font-weight: 400;
+  }
+
+  /* ─── EXPERIENCE STRIP ─── */
+  .experience-strip {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 30%, #D4A017 60%, var(--gold) 100%);
+    padding: 1.5rem 3rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .strip-track {
+    display: flex;
+    gap: 4rem;
+    animation: stripScroll 25s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes stripScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .strip-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    color: var(--brown-deep);
+    font-weight: 700;
+  }
+
+  .strip-sep {
+    color: var(--brown-mid);
+    opacity: 0.5;
+    font-size: 0.6rem;
+  }
+
+  /* ─── SIGNATURE DISHES ─── */
+  .signature {
+    padding: 8rem 0;
+    background: var(--brown-deep);
+  }
+
+  .dishes-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .dish-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    group: true;
+  }
+
+  .dish-card:first-child {
+    grid-row: span 2;
+  }
+
+  .dish-visual {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, var(--brown-mid), var(--brown-dark));
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .dish-card:first-child .dish-visual {
+    aspect-ratio: unset;
+    height: 100%;
+    min-height: 400px;
+  }
+
+  .dish-visual-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--bg, linear-gradient(135deg, #5C2E0A, #2C1505));
+    transition: transform 0.6s ease;
+  }
+
+  .dish-card:hover .dish-visual-bg {
+    transform: scale(1.05);
+  }
+
+  .dish-emoji-bg {
+    position: absolute;
+    font-size: 5rem;
+    opacity: 0.08;
+    transform: rotate(-15deg);
+    top: 20%;
+    left: 50%;
+    translate: -50%;
+  }
+
+  .dish-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.8) 100%);
+    z-index: 1;
+  }
+
+  .dish-content {
+    position: absolute;
+    bottom: 0; right: 0; left: 0;
+    padding: 2rem 1.5rem;
+    z-index: 2;
+    transform: translateY(8px);
+    transition: transform 0.4s ease;
+  }
+
+  .dish-card:hover .dish-content {
+    transform: translateY(0);
+  }
+
+  .dish-tag {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--gold-pale);
+    text-transform: uppercase;
+    background: rgba(196,146,42,0.2);
+    border: 1px solid rgba(196,146,42,0.3);
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  .dish-name {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+  }
+
+  .dish-card:first-child .dish-name {
+    font-size: 2rem;
+  }
+
+  .dish-desc {
+    font-size: 0.78rem;
+    color: var(--sand);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.4s ease 0.1s;
+    line-height: 1.6;
+  }
+
+  .dish-card:hover .dish-desc {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .dish-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+
+  /* ─── MENU ─── */
+  .menu-section {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, #210d04 0%, var(--brown-deep) 100%);
+  }
+
+  .menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(196,146,42,0.2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .menu-tab {
+    padding: 0.8rem 1.4rem;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 0.8rem;
+    color: var(--sand);
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(196,146,42,0.15);
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+
+  .menu-tab:first-child { border-left: none; }
+
+  .menu-tab.active, .menu-tab:hover {
+    background: rgba(196,146,42,0.12);
+    color: var(--gold-light);
+  }
+
+  .menu-tab.active {
+    background: rgba(196,146,42,0.18);
+    color: var(--gold-light);
+  }
+
+  .menu-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .menu-panel { display: none; }
+  .menu-panel.active { display: block; }
+
+  .menu-category-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    border-bottom: 1px solid rgba(196,146,42,0.2);
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .menu-category-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(196,146,42,0.3), transparent);
+  }
+
+  .menu-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(196,146,42,0.08);
+    margin-bottom: 3rem;
+    border: 1px solid rgba(196,146,42,0.08);
+  }
+
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1rem 1.2rem;
+    background: var(--brown-deep);
+    transition: background 0.3s;
+    gap: 1rem;
+  }
+
+  .menu-item:hover {
+    background: rgba(196,146,42,0.06);
+  }
+
+  .menu-item-name {
+    font-size: 0.88rem;
+    color: var(--cream-dark);
+    font-weight: 400;
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .menu-item-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 3px;
+    font-weight: 300;
+  }
+
+  .menu-item-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    white-space: nowrap;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* ─── TENT EXPERIENCE ─── */
+  .tent-section {
+    padding: 8rem 0;
+    background: var(--brown-deep);
+    position: relative;
+  }
+
+  .tent-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .tent-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tent-circle {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,146,42,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .tent-circle::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,146,42,0.1);
+  }
+
+  .tent-circle::after {
+    content: '';
+    position: absolute;
+    inset: -40px;
+    border-radius: 50%;
+    border: 1px dashed rgba(196,146,42,0.06);
+  }
+
+  .tent-icon-large {
+    font-size: 8rem;
+    opacity: 0.6;
+    filter: drop-shadow(0 0 30px rgba(196,146,42,0.3));
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .tent-text h2 {
+    font-family: 'Amiri', serif;
+    font-size: 2.2rem;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  .tent-text p {
+    font-size: 0.95rem;
+    color: var(--cream-dark);
+    line-height: 2;
+    opacity: 0.8;
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+  }
+
+  .experience-list {
+    list-style: none;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .experience-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.88rem;
+    color: var(--cream-dark);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(196,146,42,0.08);
+  }
+
+  .exp-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(196,146,42,0.12);
+    border: 1px solid rgba(196,146,42,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  /* ─── LOCATIONS ─── */
+  .locations {
+    padding: 8rem 0;
+    background: linear-gradient(180deg, var(--brown-deep) 0%, #160702 100%);
+  }
+
+  .locations-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .location-card {
+    border: 1px solid rgba(196,146,42,0.2);
+    padding: 2.5rem;
+    position: relative;
+    background: rgba(196,146,42,0.03);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .location-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+  }
+
+  .location-card:hover {
+    border-color: rgba(196,146,42,0.5);
+    background: rgba(196,146,42,0.07);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  }
+
+  .location-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    background: rgba(196,146,42,0.1);
+    border: 1px solid rgba(196,146,42,0.25);
+    padding: 3px 10px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .location-name {
+    font-family: 'Amiri', serif;
+    font-size: 1.8rem;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .location-address {
+    font-size: 0.82rem;
+    color: var(--sand);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+
+  .location-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .location-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: var(--cream-dark);
+  }
+
+  .location-row-icon {
+    color: var(--gold);
+    font-size: 0.85rem;
+    width: 16px;
+    text-align: center;
+  }
+
+  /* ─── RESERVE ─── */
+  .reserve {
+    padding: 8rem 0;
+    position: relative;
+    background: var(--brown-deep);
+    overflow: hidden;
+  }
+
+  .reserve-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(196,146,42,0.07) 0%, transparent 70%);
+  }
+
+  .reserve-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .reserve-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group.full { grid-column: span 2; }
+
+  .form-group label {
+    font-size: 0.75rem;
+    color: var(--sand);
+    letter-spacing: 0.05em;
+    font-weight: 400;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(196,146,42,0.05);
+    border: 1px solid rgba(196,146,42,0.2);
+    border-radius: 2px;
+    padding: 0.85rem 1rem;
+    color: var(--cream);
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 0.875rem;
+    outline: none;
+    transition: all 0.3s;
+    direction: rtl;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(196,146,42,0.09);
+    box-shadow: 0 0 0 3px rgba(196,146,42,0.1);
+  }
+
+  .form-group select option {
+    background: var(--brown-dark);
+  }
+
+  .form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .form-submit {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--brown-deep);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2px;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(196,146,42,0.4);
+  }
+
+  /* ─── CONTACT BAR ─── */
+  .contact-bar {
+    background: rgba(196,146,42,0.08);
+    border-top: 1px solid rgba(196,146,42,0.15);
+    border-bottom: 1px solid rgba(196,146,42,0.15);
+    padding: 2.5rem 3rem;
+  }
+
+  .contact-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,146,42,0.3);
+    background: rgba(196,146,42,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+
+  .contact-item:hover .contact-icon {
+    background: rgba(196,146,42,0.2);
+    border-color: var(--gold);
+  }
+
+  .contact-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  .contact-value {
+    font-size: 0.9rem;
+    color: var(--cream-dark);
+    font-weight: 400;
+    direction: ltr;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--brown-deep);
+    padding: 4rem 3rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand h3 {
+    font-family: 'Amiri', serif;
+    font-size: 1.8rem;
+    color: var(--gold-light);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .footer-brand p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.7rem;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(196,146,42,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--sand);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .social-link:hover {
+    background: rgba(196,146,42,0.15);
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+
+  .footer-col h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 1.2rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-col ul li a {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 300;
+  }
+
+  .footer-col ul li a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(196,146,42,0.1);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    opacity: 0.6;
+  }
+
+  .footer-tagline {
+    font-family: 'Amiri', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    opacity: 0.6;
+    font-style: italic;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── MENU FLOATING BTN ─── */
+  .menu-float {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--brown-deep);
+    border: none;
+    padding: 0.9rem 1.6rem;
+    border-radius: 100px;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 25px rgba(196,146,42,0.45);
+    z-index: 999;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: bounceIn 1s ease both 2s;
+  }
+
+  @keyframes bounceIn {
+    from { transform: scale(0) translateY(20px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+  }
+
+  .menu-float:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 35px rgba(196,146,42,0.55);
+  }
+
+  /* ─── GEOMETRIC ORNAMENT ─── */
+  .geo-ornament {
+    display: block;
+    margin: 0 auto 2rem;
+    opacity: 0.25;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .about-inner, .tent-inner, .footer-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .dishes-grid { grid-template-columns: 1fr; }
+    .dish-card:first-child { grid-row: auto; }
+    .locations-grid, .menu-items { grid-template-columns: 1fr; }
+    .reserve-form { grid-template-columns: 1fr; }
+    .form-group.full, .form-submit { grid-column: 1; }
+    section { padding: 5rem 0; }
+    .about-inner, .tent-inner, .locations-grid, .menu-content, .reserve-inner { padding: 0 1.5rem; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="/mnt/user-data/uploads/263050197_102917078909985_2041387502624040699_n.jpg" alt="واحة اليمن" class="nav-logo-img">
+    <div>
+      <div class="nav-logo-text">واحة اليمن</div>
+      <div class="nav-logo-sub">Wahet AlYemen</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">قصتنا</a></li>
+    <li><a href="#signature">أشهر أطباقنا</a></li>
+    <li><a href="#menu">المنيو</a></li>
+    <li><a href="#locations">فروعنا</a></li>
+    <li><a href="#reserve" class="nav-cta">احجز مكانك 👑</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="stars" id="stars"></div>
+
+  <!-- Ornament rings -->
+  <div class="ornament-ring" style="width:700px;height:700px;top:50%;left:50%;translate:-50% -50%;--speed:60s;"></div>
+  <div class="ornament-ring" style="width:500px;height:500px;top:50%;left:50%;translate:-50% -50%;--speed:40s;--dir:reverse;"></div>
+  <div class="ornament-ring" style="width:300px;height:300px;top:50%;left:50%;translate:-50% -50%;--speed:25s;"></div>
+
+  <!-- Islamic geometric background pattern -->
+  <svg class="geo-pattern" style="top:0;right:0;width:400px;height:400px;opacity:0.04;" viewBox="0 0 400 400">
+    <defs>
+      <pattern id="islamic" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+        <polygon points="40,0 80,20 80,60 40,80 0,60 0,20" fill="none" stroke="#C4922A" stroke-width="0.5"/>
+        <polygon points="40,10 70,25 70,55 40,70 10,55 10,25" fill="none" stroke="#C4922A" stroke-width="0.3"/>
+        <line x1="40" y1="0" x2="40" y2="80" stroke="#C4922A" stroke-width="0.2"/>
+        <line x1="0" y1="40" x2="80" y2="40" stroke="#C4922A" stroke-width="0.2"/>
+      </pattern>
+    </defs>
+    <rect width="400" height="400" fill="url(#islamic)"/>
+  </svg>
+
+  <svg class="geo-pattern" style="bottom:0;left:0;width:400px;height:400px;opacity:0.04;" viewBox="0 0 400 400">
+    <rect width="400" height="400" fill="url(#islamic)"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-badge">ملوك المندي الذهبي في مصر • The Golden Mandi Kings of Egypt</div>
+    <img src="/mnt/user-data/uploads/263050197_102917078909985_2041387502624040699_n.jpg" alt="واحة اليمن" class="hero-logo">
+    <div class="hero-title-ar">واحة اليمن</div>
+    <div class="hero-title-en">Wahet AlYemen</div>
+    <div class="hero-crown">👑</div>
+    <div class="hero-tagline">أول خيمة عربية يمنية أصيلة في مصر</div>
+    <p class="hero-desc">عيش التجربة اليمنية على الأراضي المصرية. أشهى الأكلات اليمنية والمصرية والخليجية في أجواء خيمة عربية فاخرة تنقلك لقلب اليمن.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">استعرض المنيو 🍽️</a>
+      <a href="#reserve" class="btn-outline">احجز طاولتك</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    <span>اكتشف</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- EXPERIENCE STRIP -->
+<div class="experience-strip">
+  <div class="strip-track" id="stripTrack">
+    <div class="strip-item">⛺️ أول خيمة عربية يمنية في مصر <span class="strip-sep">◆</span></div>
+    <div class="strip-item">👑 ملوك المندي الذهبي <span class="strip-sep">◆</span></div>
+    <div class="strip-item">📍 المهندسين • الشيخ زايد <span class="strip-sep">◆</span></div>
+    <div class="strip-item">🤤 أكثر من ١٧٥ ألف متابع <span class="strip-sep">◆</span></div>
+    <div class="strip-item">🥩 مندي • مظبي • مضغوط • زربيان <span class="strip-sep">◆</span></div>
+    <div class="strip-item">📞 01112223232 <span class="strip-sep">◆</span></div>
+    <div class="strip-item">⛺️ أول خيمة عربية يمنية في مصر <span class="strip-sep">◆</span></div>
+    <div class="strip-item">👑 ملوك المندي الذهبي <span class="strip-sep">◆</span></div>
+    <div class="strip-item">📍 المهندسين • الشيخ زايد <span class="strip-sep">◆</span></div>
+    <div class="strip-item">🤤 أكثر من ١٧٥ ألف متابع <span class="strip-sep">◆</span></div>
+    <div class="strip-item">🥩 مندي • مظبي • مضغوط • زربيان <span class="strip-sep">◆</span></div>
+    <div class="strip-item">📞 01112223232 <span class="strip-sep">◆</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-visual reveal">
+      <div class="about-frame">
+        <div class="about-img-placeholder">
+          <span style="font-size:1rem;color:var(--gold);font-family:'Amiri',serif;font-style:italic;z-index:1">
+            واحة اليمن الذهبية
+          </span>
+          <!-- Decorative Yemeni arch SVG -->
+          <svg viewBox="0 0 300 200" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.12">
+            <path d="M150 10 C80 10, 20 60, 20 130 L20 190 L280 190 L280 130 C280 60, 220 10, 150 10 Z" fill="none" stroke="#C4922A" stroke-width="1.5"/>
+            <path d="M150 30 C95 30, 45 72, 45 130 L45 170 L255 170 L255 130 C255 72, 205 30, 150 30 Z" fill="none" stroke="#C4922A" stroke-width="0.8"/>
+            <line x1="150" y1="10" x2="150" y2="190" stroke="#C4922A" stroke-width="0.5" stroke-dasharray="4,4"/>
+            <circle cx="150" cy="30" r="8" fill="none" stroke="#C4922A" stroke-width="1"/>
+            <polygon points="150,18 158,28 142,28" fill="#C4922A" opacity="0.4"/>
+          </svg>
+          <img src="/mnt/user-data/uploads/263050197_102917078909985_2041387502624040699_n.jpg" alt="واحة اليمن" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:2rem;opacity:0.35;">
+        </div>
+        <div class="about-stats">
+          <div class="stat-box">
+            <span class="stat-number">+١٧٥K</span>
+            <span class="stat-label">متابع على فيسبوك</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">٢</span>
+            <span class="stat-label">فرع في القاهرة والجيزة</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">+١٠٠</span>
+            <span class="stat-label">صنف من أشهى الأطباق</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">#١</span>
+            <span class="stat-label">المندي اليمني في مصر</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-text reveal" style="transition-delay:0.2s">
+      <div class="section-label">قصتنا</div>
+      <h2>حيث تلتقي<br><em>أصالة اليمن</em><br>بأرض الكنانة</h2>
+      <p>واحة اليمن ليست مجرد مطعم — هي تجربة كاملة. أول خيمة عربية يمنية أصيلة على الأراضي المصرية، جمعنا أشهى الأكلات اليمنية التراثية مع الطعام المصري والخليجي في بيئة تنقلك لقلب اليمن.</p>
+      <p>من المندي الذهبي المطهو على الحطب، إلى الزربيان العطري والمظبي المميز — كل طبق يحكي قصة من موروثنا الغني.</p>
+
+      <div class="about-features">
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span>⛺️ خيمة عربية أصيلة</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span>🔥 طهي على الحطب</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span>🥘 وصفات يمنية تراثية</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span>📦 ديليفري وتيك أواي</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span>🎉 حجوزات العزايم</span>
+        </div>
+        <div class="feature-item">
+          <div class="feature-dot"></div>
+          <span>👑 مندي ذهبي فاخر</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE DISHES -->
+<section class="signature" id="signature">
+  <div class="section-label">نجوم المطبخ</div>
+  <h2 class="section-title">أشهر أطباقنا الملكية</h2>
+  <p class="section-subtitle">Signature dishes crafted with centuries of Yemeni culinary heritage</p>
+
+  <div class="dishes-grid">
+    <div class="dish-card reveal">
+      <div class="dish-visual" style="min-height:460px;">
+        <div class="dish-visual-bg" style="--bg:linear-gradient(160deg, #6B3A1F 0%, #2C1505 100%);"></div>
+        <div class="dish-emoji-bg">🍖</div>
+        <div class="dish-overlay"></div>
+        <!-- Geometric frame -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;pointer-events:none" viewBox="0 0 300 460">
+          <rect x="20" y="20" width="260" height="420" fill="none" stroke="#C4922A" stroke-width="1"/>
+          <rect x="35" y="35" width="230" height="390" fill="none" stroke="#C4922A" stroke-width="0.5"/>
+          <line x1="20" y1="240" x2="280" y2="240" stroke="#C4922A" stroke-width="0.5" stroke-dasharray="5,5"/>
+        </svg>
+        <div class="dish-content">
+          <div class="dish-tag">الطبق الملكي</div>
+          <div class="dish-name">المندي الذهبي 👑</div>
+          <div class="dish-desc">لحم مطهو ببطء على الفحم والحطب بتوابل يمنية أصيلة، يُقدَّم فوق أرز بسمتي فاخر بعطر الهيل والبهارات.</div>
+          <div class="dish-price">من ٣٨٠ جنيه</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card reveal" style="transition-delay:0.1s">
+      <div class="dish-visual">
+        <div class="dish-visual-bg" style="--bg:linear-gradient(135deg, #4A2810 0%, #1A0A02 100%);"></div>
+        <div class="dish-emoji-bg" style="font-size:3rem;opacity:0.1">🍗</div>
+        <div class="dish-overlay"></div>
+        <div class="dish-content">
+          <div class="dish-tag">من اليمن</div>
+          <div class="dish-name">دجاج حرازي مشوي</div>
+          <div class="dish-desc">دجاج يمني مشوي بأعشاب حرازية نادرة</div>
+          <div class="dish-price">٣٦٠ جنيه</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card reveal" style="transition-delay:0.15s">
+      <div class="dish-visual">
+        <div class="dish-visual-bg" style="--bg:linear-gradient(135deg, #3D1C02 0%, #260e01 100%);"></div>
+        <div class="dish-emoji-bg" style="font-size:3rem;opacity:0.1">🥘</div>
+        <div class="dish-overlay"></div>
+        <div class="dish-content">
+          <div class="dish-tag">يمني أصيل</div>
+          <div class="dish-name">الزربيان الملكي</div>
+          <div class="dish-desc">أرز معطر بالبهارات اليمنية مع اللحم</div>
+          <div class="dish-price">من ١٢٠٠ جنيه</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card reveal" style="transition-delay:0.2s">
+      <div class="dish-visual">
+        <div class="dish-visual-bg" style="--bg:linear-gradient(135deg, #5C2E0A 0%, #2C1505 100%);"></div>
+        <div class="dish-emoji-bg" style="font-size:3rem;opacity:0.1">🍢</div>
+        <div class="dish-overlay"></div>
+        <div class="dish-content">
+          <div class="dish-tag">مشويات</div>
+          <div class="dish-name">ميكس جريل الواحة</div>
+          <div class="dish-desc">تشكيلة مشويات فاخرة: كباب، ريش، كفتة وشيش</div>
+          <div class="dish-price">٣٠٠ جنيه/كيلو</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card reveal" style="transition-delay:0.25s">
+      <div class="dish-visual">
+        <div class="dish-visual-bg" style="--bg:linear-gradient(135deg, #2C1505 0%, #1A0A02 100%);"></div>
+        <div class="dish-emoji-bg" style="font-size:3rem;opacity:0.1">🍮</div>
+        <div class="dish-overlay"></div>
+        <div class="dish-content">
+          <div class="dish-tag">حلويات يمنية</div>
+          <div class="dish-name">عريكة الواحة</div>
+          <div class="dish-desc">نوتيلا وقشطة على خبز يمني ساخن</div>
+          <div class="dish-price">١٤٠ جنيه</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU SECTION -->
+<section class="menu-section" id="menu">
+  <div class="section-label">قائمة الطعام</div>
+  <h2 class="section-title">المنيو الكامل</h2>
+  <p class="section-subtitle">Full Menu — أكثر من ١٠٠ صنف من أشهى الأكلات اليمنية والمصرية والخليجية</p>
+
+  <div style="max-width:900px;margin:0 auto 2rem;padding:0 3rem;">
+    <div class="menu-tabs">
+      <button class="menu-tab active" onclick="showMenu('mandi')">لحوم مندي 👑</button>
+      <button class="menu-tab" onclick="showMenu('grills')">المشويات 🔥</button>
+      <button class="menu-tab" onclick="showMenu('chicken')">الدجاج 🍗</button>
+      <button class="menu-tab" onclick="showMenu('starters')">مقبلات</button>
+      <button class="menu-tab" onclick="showMenu('trays')">الصواني</button>
+      <button class="menu-tab" onclick="showMenu('sweets')">حلويات 🍯</button>
+      <button class="menu-tab" onclick="showMenu('drinks')">مشروبات</button>
+    </div>
+  </div>
+
+  <div class="menu-content">
+
+    <!-- MANDI -->
+    <div id="panel-mandi" class="menu-panel active">
+      <div class="menu-category-title">👑 لحوم مندي</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">نفر لحم مندي</div><div class="menu-item-price">٣٨٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">لحم سوبر</div><div class="menu-item-price">٥٨٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">ربع تيس مندي</div><div class="menu-item-price">١٢٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">نصف تيس مندي</div><div class="menu-item-price">٢٣٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">تيس كامل مندي</div><div class="menu-item-price">٤٥٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">تيس VIP</div><div class="menu-item-price">٥٠٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">خروف مندي</div><div class="menu-item-price">٨٠٠٠ - ١١٠٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">ارز بسمتي سادة</div><div class="menu-item-price">٥٠ جنيه</div></div>
+      </div>
+
+      <div class="menu-category-title">المظبي</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">ربع لحم مظبي</div><div class="menu-item-price">١٢٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">نصف لحم مظبي</div><div class="menu-item-price">٢٣٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">تيس مظبي</div><div class="menu-item-price">٤٥٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">تيس مظبي مخمود</div><div class="menu-item-price">٤٥٠٠ جنيه</div></div>
+      </div>
+
+      <div class="menu-category-title">المضغوط والزربيان</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">نفر لحم مضغوط</div><div class="menu-item-price">٣٨٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">ربع تيس زريبان</div><div class="menu-item-price">١٢٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">نصف تيس مضغوط</div><div class="menu-item-price">٢٣٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">تيس زربيان</div><div class="menu-item-price">٤٥٠٠ جنيه</div></div>
+      </div>
+    </div>
+
+    <!-- GRILLS -->
+    <div id="panel-grills" class="menu-panel">
+      <div class="menu-category-title">🔥 المشويات</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">كيلو كفتة كندوز</div><div class="menu-item-price">١٢٥ - ٥٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كيلو كفتة ضاني</div><div class="menu-item-price">٢٠٠ - ٧٥٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كيلو كباب ضاني</div><div class="menu-item-price">٣٠٠ - ١٢٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كيلو ريش ضاني</div><div class="menu-item-price">٣٠٠ - ١٢٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كيلو ميكس جريل</div><div class="menu-item-price">٣٠٠ - ٩٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كيلو شيش طاووق</div><div class="menu-item-price">٩٥ - ٣٧٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كيلو سجق مشوي</div><div class="menu-item-price">١٥٠ - ٦٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كيلو كبده مشوي</div><div class="menu-item-price">١٢٥ - ٥٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">فرد حمام محشي</div><div class="menu-item-price">١٥٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">موزة مع خضار</div><div class="menu-item-price">٥٤٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">حواوشي مشوي</div><div class="menu-item-price">٩٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كومبو حواوشي كامل</div><div class="menu-item-price">١١٠ جنيه</div></div>
+      </div>
+    </div>
+
+    <!-- CHICKEN -->
+    <div id="panel-chicken" class="menu-panel">
+      <div class="menu-category-title">🍗 الدجاج</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">دجاجة حرازي مشوية<div class="menu-item-sub">ارز، صوص طماطم حارة</div></div><div class="menu-item-price">٣٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">نصف دجاجة حرازي<div class="menu-item-sub">ارز، صوص طماطم حارة</div></div><div class="menu-item-price">١٨٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">دجاجة مندي<div class="menu-item-sub">ارز، صوص طماطم حارة</div></div><div class="menu-item-price">٣٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">دجاجة مظبي<div class="menu-item-sub">ارز، صوص طماطم حارة</div></div><div class="menu-item-price">٣٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">دجاجة مشوية على الفحم</div><div class="menu-item-price">٣٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">دجاج مضغوط</div><div class="menu-item-price">٣٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">دجاج زربيان</div><div class="menu-item-price">٣٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">دجاج برياني</div><div class="menu-item-price">٣٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">ربع صدر دجاج</div><div class="menu-item-price">١٠٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">ربع ورك دجاج</div><div class="menu-item-price">١٠٠ جنيه</div></div>
+      </div>
+    </div>
+
+    <!-- STARTERS -->
+    <div id="panel-starters" class="menu-panel">
+      <div class="menu-category-title">المقبلات الساخنة</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">صينية محاشي مشكل</div><div class="menu-item-price">٩٠ - ١٨٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">ميكس مقبلات الواحي</div><div class="menu-item-price">٢٤٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">رقاق باللحمة</div><div class="menu-item-price">١٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">ميكس شامي<div class="menu-item-sub">سمبوسك و كوبيبة</div></div><div class="menu-item-price">١١٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">ممبار</div><div class="menu-item-price">٧٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">سمبوسك لحمة</div><div class="menu-item-price">٤٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">شوربة حمام</div><div class="menu-item-price">٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">شوربة كريمة دجاج</div><div class="menu-item-price">١١٠ جنيه</div></div>
+      </div>
+
+      <div class="menu-category-title">السلطات والمقبلات الباردة</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">سلطة واحة اليمن ملكي</div><div class="menu-item-price">١٥٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">ميكس سلطات</div><div class="menu-item-price">٧٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">سلطة سيزر دجاج</div><div class="menu-item-price">١٢٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">بابا غنوج</div><div class="menu-item-price">٣٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">حمص بيروتي</div><div class="menu-item-price">٤٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">سحاوق احمر</div><div class="menu-item-price">٥ - ٨ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">عشار حار</div><div class="menu-item-price">٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">الشفوت</div><div class="menu-item-price">٥٠ جنيه</div></div>
+      </div>
+    </div>
+
+    <!-- TRAYS -->
+    <div id="panel-trays" class="menu-panel">
+      <div class="menu-category-title">🍽️ الصواني والوجبات الكاملة</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">صنية الأصدقاء<div class="menu-item-sub">ثمن تيس مندي، دجاجة، كيلو كفتة، ارز، سلطة</div></div><div class="menu-item-price">١٥٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">صنية لمة العيلة<div class="menu-item-sub">ربع تيس مندي + دجاجة + مقبلات لـ٤</div></div><div class="menu-item-price">١٦٧٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">صنية الوحوش<div class="menu-item-sub">نصف تيس + ٢ دجاجة + كيلو كفتة للـ٨</div></div><div class="menu-item-price">٣٧٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">صنية واحة اليمن الكاملة<div class="menu-item-sub">نصف تيس + ٢ دجاجة + مشويات + مقبلات</div></div><div class="menu-item-price">٤٥٨٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">صنية ظبط وكلمني<div class="menu-item-sub">تكفي لـ٤ أفراد مشويات كاملة</div></div><div class="menu-item-price">١٦٥٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">صنية الملوك<div class="menu-item-sub">نصف تيس + مشويات فاخرة + مقبلات</div></div><div class="menu-item-price">٣٥٣٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">وجبة واحة اليمن الكبرى</div><div class="menu-item-price">١٧٧٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">صنية القبطان 🦐<div class="menu-item-sub">جمبري جامبو + ديرك + فيليه مقلي</div></div><div class="menu-item-price">٣٩٠٠ جنيه</div></div>
+      </div>
+
+      <div class="menu-category-title">وجبات فردية</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">وجبة التوفير<div class="menu-item-sub">ربع دجاجة مندي + كفتة + ارز + سحاوق</div></div><div class="menu-item-price">١٧٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">وجبة تكا<div class="menu-item-sub">نصف دجاجة مشوية + ارز مندي + سلطة</div></div><div class="menu-item-price">٢٩٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">وجبة ميكس جريل<div class="menu-item-sub">ربع دجاجة + كباب + ريش + كفتة + سجق</div></div><div class="menu-item-price">٤٢٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">وجبة المداح<div class="menu-item-sub">نفر مندي + كفتة + شوربة + سمبوسك</div></div><div class="menu-item-price">٥٤٠ جنيه</div></div>
+      </div>
+    </div>
+
+    <!-- SWEETS -->
+    <div id="panel-sweets" class="menu-panel">
+      <div class="menu-category-title">🍯 الحلويات اليمنية</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">عريكة واحة اليمن<div class="menu-item-sub">نوتيلا وقشطة</div></div><div class="menu-item-price">١٤٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">عريكة ملكي بالقشطة</div><div class="menu-item-price">١٥٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">معصوب واحة اليمن<div class="menu-item-sub">نوتيلا وقشطة</div></div><div class="menu-item-price">١٥٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كنافة بالقشطة</div><div class="menu-item-price">٧٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">كنافة بالنوتيلا</div><div class="menu-item-price">٧٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">فتة زبيدي ملكي</div><div class="menu-item-price">١٥٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">فتة تمر كبسة</div><div class="menu-item-price">١٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">بنت الصحن</div><div class="menu-item-price">٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">هريسة يمني</div><div class="menu-item-price">٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">مرسة يمني</div><div class="menu-item-price">١٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">عسل سدر جبلي 🍯</div><div class="menu-item-price">٢٥٠ - ١٠٠٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">عريكة ملكي فواكه</div><div class="menu-item-price">١٤٠ جنيه</div></div>
+      </div>
+    </div>
+
+    <!-- DRINKS -->
+    <div id="panel-drinks" class="menu-panel">
+      <div class="menu-category-title">☕ المشروبات الساخنة</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">شاي حليب عدني</div><div class="menu-item-price">٣٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">براد شاي حليب عدني</div><div class="menu-item-price">٧٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">قهوة عربي وتمر</div><div class="menu-item-price">٤٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">دلة قهوة عربي وتمر رطب</div><div class="menu-item-price">١٥٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">زنجبيل</div><div class="menu-item-price">٢٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">قهوة تركي</div><div class="menu-item-price">٣٥ - ٤٥ جنيه</div></div>
+      </div>
+
+      <div class="menu-category-title">🥤 عصير فريش وسموزي</div>
+      <div class="menu-items">
+        <div class="menu-item"><div class="menu-item-name">عصير مانجو</div><div class="menu-item-price">٦٠ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">عصير فراولة</div><div class="menu-item-price">٥٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">عصير ليمون بالنعناع</div><div class="menu-item-price">٣٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">سموزي باشون فروت</div><div class="menu-item-price">٨٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">صودا الفرقة<div class="menu-item-sub">سفن أب، قرفة خشب، ليمون</div></div><div class="menu-item-price">٧٥ جنيه</div></div>
+        <div class="menu-item"><div class="menu-item-name">عيران الواحة</div><div class="menu-item-price">٧٥ جنيه</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TENT EXPERIENCE -->
+<section class="tent-section">
+  <div class="tent-inner">
+    <div class="tent-visual reveal">
+      <div class="tent-circle">
+        <div class="tent-icon-large">⛺</div>
+        <!-- Rotating geometric ornament -->
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.15;animation:rotateRing 20s linear infinite" viewBox="0 0 380 380">
+          <circle cx="190" cy="190" r="185" fill="none" stroke="#C4922A" stroke-width="0.5" stroke-dasharray="8,8"/>
+          <polygon points="190,5 375,100 375,280 190,375 5,280 5,100" fill="none" stroke="#C4922A" stroke-width="0.8"/>
+          <polygon points="190,30 350,115 350,265 190,350 30,265 30,115" fill="none" stroke="#C4922A" stroke-width="0.4"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="tent-text reveal" style="transition-delay:0.2s">
+      <div class="section-label">التجربة</div>
+      <h2>أجواء الخيمة<br>اليمنية الأصيلة</h2>
+      <p>عيش تجربة فريدة من نوعها — خيمة عربية أصيلة تنقلك من قلب القاهرة إلى سماء اليمن، مع موسيقى عربية وأجواء تراثية تجعل كل وجبة ذكرى لا تُنسى.</p>
+
+      <ul class="experience-list">
+        <li>
+          <div class="exp-icon">⛺</div>
+          <span>خيمة عربية يمنية أصيلة بديكور تراثي فاخر</span>
+        </li>
+        <li>
+          <div class="exp-icon">🔥</div>
+          <span>طهي تقليدي على الفحم والحطب لأشهى النكهات</span>
+        </li>
+        <li>
+          <div class="exp-icon">🥘</div>
+          <span>وصفات يمنية سرية تتوارثها الأجيال</span>
+        </li>
+        <li>
+          <div class="exp-icon">👑</div>
+          <span>أطباق مندي ذهبي ملكية للعزايم والولايم</span>
+        </li>
+        <li>
+          <div class="exp-icon">📱</div>
+          <span>حجز أونلاين وخدمة ديليفري وتيك أواي</span>
+        </li>
+        <li>
+          <div class="exp-icon">🌙</div>
+          <span>أجواء رمضانية وسهرات خاصة بالحجز</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locations" id="locations">
+  <div class="section-label">فروعنا</div>
+  <h2 class="section-title">زورنا في أي من فروعنا</h2>
+  <p class="section-subtitle">فرعان في قلب القاهرة الكبرى يخدمانك بأعلى جودة وأصدق نكهة</p>
+
+  <div class="locations-grid">
+    <div class="location-card reveal">
+      <div class="location-badge">الفرع الأول</div>
+      <div class="location-name">📍 المهندسين</div>
+      <div class="location-address">
+        ٩ شارع جامعة الدول العربية،<br>
+        مقابل أسواق مصر الحرة، المهندسين<br>
+        القاهرة
+      </div>
+      <div class="location-info">
+        <div class="location-row">
+          <span class="location-row-icon">📞</span>
+          <span>01112223232</span>
+        </div>
+        <div class="location-row">
+          <span class="location-row-icon">🕐</span>
+          <span>متاح للحجز والديليفري</span>
+        </div>
+        <div class="location-row">
+          <span class="location-row-icon">✅</span>
+          <span>تناول الطعام داخل المطعم • ديليفري • تيك أواي</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="location-card reveal" style="transition-delay:0.2s">
+      <div class="location-badge">الفرع الثاني</div>
+      <div class="location-name">📍 الشيخ زايد</div>
+      <div class="location-address">
+        واصلة داهشور، مدخل زايد ٦،<br>
+        الشيخ زايد، الجيزة<br>
+        كود البريد: ٣٢٤٠٣٠١
+      </div>
+      <div class="location-info">
+        <div class="location-row">
+          <span class="location-row-icon">📞</span>
+          <span>01112223232</span>
+        </div>
+        <div class="location-row">
+          <span class="location-row-icon">🕐</span>
+          <span>افتتاح قريباً بتجربة مميزة</span>
+        </div>
+        <div class="location-row">
+          <span class="location-row-icon">⛺</span>
+          <span>خيمة عربية أصيلة بمساحة أكبر</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVE -->
+<section class="reserve" id="reserve">
+  <div class="reserve-bg"></div>
+  <div class="reserve-inner">
+    <div class="section-label">الحجوزات</div>
+    <h2 class="section-title reveal">احجز طاولتك الآن 👑</h2>
+    <p class="section-subtitle reveal" style="margin-bottom:0">للعزايم والولايم والمناسبات الخاصة — تواصل معنا وعيش التجربة اليمنية الأصيلة</p>
+
+    <div class="reserve-form reveal" style="transition-delay:0.2s">
+      <div class="form-group">
+        <label>الاسم الكريم</label>
+        <input type="text" placeholder="اسمك" />
+      </div>
+      <div class="form-group">
+        <label>رقم الهاتف</label>
+        <input type="tel" placeholder="01XXXXXXXXX" style="direction:ltr;text-align:right" />
+      </div>
+      <div class="form-group">
+        <label>الفرع المفضل</label>
+        <select>
+          <option>المهندسين</option>
+          <option>الشيخ زايد</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>عدد الأشخاص</label>
+        <select>
+          <option>١ - ٢ شخص</option>
+          <option>٣ - ٥ أشخاص</option>
+          <option>٦ - ١٠ أشخاص</option>
+          <option>أكثر من ١٠</option>
+          <option>عزيمة كبيرة / وليمة</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>ملاحظات خاصة أو طلبات</label>
+        <textarea placeholder="أخبرنا بأي طلبات خاصة أو مناسبة تريد الاحتفال بها..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleReserve(this)">احجز مكانك الآن 🤎</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT BAR -->
+<div class="contact-bar">
+  <div class="contact-inner">
+    <a href="tel:+201112223232" class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-label">اتصل بنا</div>
+        <div class="contact-value">01112223232</div>
+      </div>
+    </a>
+    <a href="mailto:wahetalyemeneg@gmail.com" class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <div class="contact-label">البريد الإلكتروني</div>
+        <div class="contact-value">wahetalyemeneg@gmail.com</div>
+      </div>
+    </a>
+    <a href="https://www.facebook.com/wahetyemen/" target="_blank" class="contact-item">
+      <div class="contact-icon">f</div>
+      <div>
+        <div class="contact-label">فيسبوك</div>
+        <div class="contact-value">+175K متابع</div>
+      </div>
+    </a>
+    <a href="https://linktr.ee/wahetalyemen" target="_blank" class="contact-item">
+      <div class="contact-icon">🔗</div>
+      <div>
+        <div class="contact-label">روابطنا</div>
+        <div class="contact-value">Linktree</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>واحة اليمن</h3>
+      <p>أول خيمة عربية يمنية أصيلة في مصر. ملوك المندي الذهبي. أشهى الأكلات اليمنية والمصرية والخليجية.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/wahetyemen/" target="_blank" class="social-link">fb</a>
+        <a href="https://linktr.ee/wahetalyemen" target="_blank" class="social-link">🌿</a>
+        <a href="tel:+201112223232" class="social-link">📞</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="#about">قصتنا</a></li>
+        <li><a href="#signature">أشهر أطباقنا</a></li>
+        <li><a href="#menu">المنيو الكامل</a></li>
+        <li><a href="#locations">فروعنا</a></li>
+        <li><a href="#reserve">احجز</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>أطباقنا</h4>
+      <ul>
+        <li><a href="#menu">المندي الذهبي</a></li>
+        <li><a href="#menu">المظبي</a></li>
+        <li><a href="#menu">الزربيان</a></li>
+        <li><a href="#menu">المشويات</a></li>
+        <li><a href="#menu">الحلويات اليمنية</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>تواصل</h4>
+      <ul>
+        <li><a href="tel:+201112223232">📞 01112223232</a></li>
+        <li><a href="mailto:wahetalyemeneg@gmail.com">✉️ البريد الإلكتروني</a></li>
+        <li><a href="#">📍 المهندسين</a></li>
+        <li><a href="#">📍 الشيخ زايد</a></li>
+        <li><a href="https://www.facebook.com/wahetyemen/" target="_blank">👥 فيسبوك</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© ٢٠٢٥ واحة اليمن — جميع الحقوق محفوظة</div>
+    <div class="footer-tagline">ملوك المندي الذهبي في مصر 👑</div>
+  </div>
+</footer>
+
+<!-- FLOATING MENU BTN -->
+<button class="menu-float" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+  🍽️ المنيو
+</button>
+
+<script>
+  // Stars
+  const starsEl = document.getElementById('stars');
+  for(let i = 0; i < 80; i++){
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random()*2 + 0.5;
+    s.style.cssText = `
+      width:${size}px; height:${size}px;
+      top:${Math.random()*80}%;
+      left:${Math.random()*100}%;
+      --d:${2+Math.random()*4}s;
+      --delay:-${Math.random()*5}s;
+    `;
+    starsEl.appendChild(s);
+  }
+
+  // Navbar scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Menu tabs
+  function showMenu(id){
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // Reserve form
+  function handleReserve(btn){
+    const phone = document.querySelector('input[type="tel"]').value;
+    if(phone){
+      btn.textContent = '✅ تم الحجز! سنتواصل معك قريباً 🤎';
+      btn.style.background = 'linear-gradient(135deg, #2d7a47, #3a9e5f)';
+      btn.style.color = 'white';
+      setTimeout(() => {
+        btn.textContent = 'احجز مكانك الآن 🤎';
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 4000);
+    } else {
+      btn.textContent = '⚠️ من فضلك أدخل رقم هاتفك';
+      setTimeout(() => btn.textContent = 'احجز مكانك الآن 🤎', 2000);
+    }
+  }
+</script>
+</body>
+</html>
